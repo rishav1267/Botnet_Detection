@@ -1,0 +1,42 @@
+{
+  "dataset_name": "IoT-23 / N-BaIoT Network Intrusion Benchmark",
+  "sources": [
+    "Stratosphere Laboratory, Czech Technical University (CTU-IoT-Malware-Capture)",
+    "UCI Machine Learning Repository: N-BaIoT Dataset (Y. Meidan et al.)"
+  ],
+  "license": "Creative Commons Attribution 4.0 International (CC-BY 4.0)",
+  "description": "Standardized flow-level network telemetry from benign commercial IoT devices and botnet malware captures (Mirai, BASHLITE/Gafgyt, Torii).",
+  "classes": {
+    "0": {
+      "label": "Normal",
+      "description": "Routine IoT telemetry (NTP, DNS, MQTT, RTSP video streams)"
+    },
+    "1": {
+      "label": "Suspicious",
+      "description": "Reconnaissance port sweeps, anomalous cadence, slow C2 beacons"
+    },
+    "2": {
+      "label": "High-Risk",
+      "description": "Active botnet incursion: Mirai brute-force, SYN flood, reflection"
+    }
+  },
+  "feature_count": 11,
+  "feature_names": [
+    "packet_rate",
+    "byte_rate",
+    "conn_freq",
+    "dest_port_norm",
+    "unique_dest_ips",
+    "syn_ratio",
+    "flow_duration",
+    "payload_entropy",
+    "fwd_packets",
+    "bwd_packets",
+    "mean_pkt_len"
+  ],
+  "limitations": [
+    "Flow statistics do not capture zero-day evasion in encrypted TLS payloads beyond entropy.",
+    "Device categories (e.g., smart cameras streaming video vs smart plugs) exhibit wide baseline variance.",
+    "Synthetic sampling models the statistical distributions of the CTU IoT-23 capture logs."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "model_name": "Random Forest IoT Botnet Classifier",
+  "framework": "scikit-learn",
+  "version": "1.8.0",
+  "n_estimators": 15,
+  "max_depth": 5,
+  "sample_size": 600,
+  "test_split_pct": 25,
+  "feature_count": 11,
+  "feature_names": [
+    "packet_rate",
+    "byte_rate",
+    "conn_freq",
+    "dest_port_norm",
+    "unique_dest_ips",
+    "syn_ratio",
+    "flow_duration",
+    "payload_entropy",
+    "fwd_packets",
+    "bwd_packets",
+    "mean_pkt_len"
+  ],
+  "classes": [
+    "Normal",
+    "Suspicious",
+    "High-Risk"
+  ],
+  "updated_at": "2026-10-13 17:54:01 UTC",
+  "status": "operational",
+  "is_trained": true,
+  "is_calibrated": true
+}

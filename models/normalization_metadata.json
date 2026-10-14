@@ -1,0 +1,89 @@
+{
+  "feature_schema": {
+    "packet_rate": {
+      "label": "Packet Rate",
+      "unit": "pps",
+      "category": "Volume",
+      "formula": "Total packets / duration",
+      "range": "1 - 1000 pps"
+    },
+    "byte_rate": {
+      "label": "Byte Rate",
+      "unit": "B/s",
+      "category": "Volume",
+      "formula": "Total payload bytes / duration",
+      "range": "64 - 500 KB/s"
+    },
+    "conn_freq": {
+      "label": "Connection Frequency",
+      "unit": "conn/10s",
+      "category": "Timing",
+      "formula": "Unique handshake initiations per 10s",
+      "range": "0.5 - 60 conn"
+    },
+    "dest_port_norm": {
+      "label": "Target Port",
+      "unit": "norm",
+      "category": "Protocol",
+      "formula": "Destination Port / 65535.0",
+      "range": "0.0 - 1.0"
+    },
+    "unique_dest_ips": {
+      "label": "Target Dispersion",
+      "unit": "IPs",
+      "category": "Recon",
+      "formula": "Distinct destination IPs contacted",
+      "range": "1 - 60 IPs"
+    },
+    "syn_ratio": {
+      "label": "TCP SYN Ratio",
+      "unit": "ratio",
+      "category": "Protocol",
+      "formula": "SYN flags count / total packets",
+      "range": "0.0 - 1.0"
+    },
+    "flow_duration": {
+      "label": "Flow Duration",
+      "unit": "sec",
+      "category": "Timing",
+      "formula": "End timestamp - Start timestamp",
+      "range": "0.05 - 60s"
+    },
+    "payload_entropy": {
+      "label": "Payload Entropy",
+      "unit": "bits/byte",
+      "category": "Payload",
+      "formula": "Shannon entropy -sum(p * log2(p))",
+      "range": "0.0 - 8.0"
+    },
+    "fwd_packets": {
+      "label": "Forward Packets",
+      "unit": "pkts",
+      "category": "Direction",
+      "formula": "Client -> Destination packet count",
+      "range": "1 - 1000"
+    },
+    "bwd_packets": {
+      "label": "Backward Packets",
+      "unit": "pkts",
+      "category": "Direction",
+      "formula": "Destination -> Client packet response count",
+      "range": "0 - 500"
+    },
+    "mean_pkt_len": {
+      "label": "Mean Packet Length",
+      "unit": "bytes",
+      "category": "Payload",
+      "formula": "Total bytes / total packets",
+      "range": "40 - 1500 B"
+    }
+  },
+  "transforms": {
+    "dest_port_norm": "MinMax norm: dest_port / 65535.0 (0.0 - 1.0)",
+    "syn_ratio": "Flag proportion: syn_flags / total_packets (0.0 - 1.0)",
+    "payload_entropy": "Shannon Entropy in bits/byte (0.0 - 8.0)",
+    "packet_rate": "Volumetric rate in pps (raw float)",
+    "byte_rate": "Throughput in B/s (raw float)",
+    "conn_freq": "Cadence per 10s window (raw float)"
+  }
+}

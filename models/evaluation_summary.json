@@ -1,0 +1,199 @@
+{
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "roc_auc": 1.0,
+  "macro_metrics": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "per_class_metrics": {
+    "Normal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "test_support": 82
+    },
+    "Suspicious": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "test_support": 38
+    },
+    "High-Risk": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "test_support": 30
+    }
+  },
+  "confusion_matrix": [
+    [
+      82,
+      0,
+      0
+    ],
+    [
+      0,
+      38,
+      0
+    ],
+    [
+      0,
+      0,
+      30
+    ]
+  ],
+  "feature_importance": {
+    "packet_rate": 0.1644,
+    "byte_rate": 0.058,
+    "conn_freq": 0.1969,
+    "dest_port_norm": 0.0507,
+    "unique_dest_ips": 0.0424,
+    "syn_ratio": 0.2409,
+    "flow_duration": 0.0317,
+    "payload_entropy": 0.1903,
+    "fwd_packets": 0.0,
+    "bwd_packets": 0.0013,
+    "mean_pkt_len": 0.0234
+  },
+  "roc_curve": [
+    {
+      "fpr": 0.0,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.0714,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.1429,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.2143,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.2857,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.3571,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.4286,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.5,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.5714,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.6429,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.7143,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.7857,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.8571,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.9286,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 1.0,
+      "tpr": 1.0
+    }
+  ],
+  "pr_curve": [
+    {
+      "recall": 0.0,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.0714,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.1429,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.2143,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.2857,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.3571,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.4286,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.5,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.5714,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.6429,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.7143,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.7857,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.8571,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.9286,
+      "precision": 1.0
+    },
+    {
+      "recall": 1.0,
+      "precision": 1.0
+    }
+  ],
+  "test_samples_evaluated": 150,
+  "train_samples_evaluated": 450,
+  "class_imbalance_report": {
+    "Normal (0)": 330,
+    "Suspicious (1)": 150,
+    "High-Risk (2)": 120
+  },
+  "limitations": [
+    "Flow statistics do not capture zero-day evasion in encrypted TLS payloads beyond entropy.",
+    "Device categories (e.g., smart cameras streaming video vs smart plugs) exhibit wide baseline variance.",
+    "Synthetic sampling models the statistical distributions of the CTU IoT-23 capture logs."
+  ],
+  "evaluated_at": "2026-10-13 17:54:01 UTC"
+}
